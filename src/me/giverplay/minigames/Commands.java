@@ -40,6 +40,8 @@ public class Commands implements CommandExecutor
 		}
 		
 		Screen screen = new Screen(loc, w, h);
+		screen.createBounds();
+		System.out.println("Tudo ok");
 		
 		return false;
 	}

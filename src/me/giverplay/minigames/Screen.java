@@ -26,25 +26,29 @@ public class Screen
 		this.x1 = start.getBlockX() + 5;
 		this.y1 = start.getBlockY() + 5;
 		this.z1 = start.getBlockZ();
-		bx = x1 - 1;
-		by = y1 + 1;
-		
-		createBounds();
+		this.bx = this.x1 - 1;
+		this.by = this.y1 - 1;
 	}
 	
 	public void createBounds()
 	{
+		System.out.println("Iniciando bounds");
+		
 		for(int xx = bx; xx < x1 + width + 1; xx++)
 		{
 			world.getBlockAt(xx, by, z1).setType(Material.BEDROCK);
 			world.getBlockAt(xx, by + height + 1, z1).setType(Material.BEDROCK);
 		}
 		
-		for(int yy = by; yy < by + height + 1; by++)
+		System.out.println("X Finalizado");
+		
+		for(int yy = by; yy < y1 + height + 1; yy++)
 		{
 			world.getBlockAt(bx, yy, z1).setType(Material.BEDROCK);
 			world.getBlockAt(x1 + width + 1, yy, z1).setType(Material.BEDROCK);
 		}
+		
+		System.out.println("Y finalizado");
 	}
 	
 	public void draw(BufferedImage image)
