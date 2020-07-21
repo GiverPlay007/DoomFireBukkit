@@ -1,10 +1,16 @@
 package me.giverplay.minigames;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Color;
+import org.bukkit.DyeColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Sheep;
 
 public class Commands implements CommandExecutor
 {
@@ -20,28 +26,55 @@ public class Commands implements CommandExecutor
 		Player player = (Player) sender;
 		Location loc = player.getLocation();
 		
-		if(args.length < 2)
+		if(cmd.getName().equalsIgnoreCase("setup"))
 		{
-			player.sendMessage("§cEspecifique a resolução");
-			return true;
+			if(args.length < 2)
+			{
+				player.sendMessage("§cEspecifique a resolução");
+				return true;
+			}
+			
+			int w, h;
+			
+			try
+			{
+				w = Integer.parseInt(args[0]);
+				h = Integer.parseInt(args[1]);
+			}
+			catch(NumberFormatException e)
+			{
+				player.sendMessage("§cResolução deve ser em números inteiros...");
+				return true;
+			}
+			
+			Screen screen = new Screen(loc, w, h);
 		}
 		
-		int w, h;
-		
-		try
+		if(cmd.getName().equalsIgnoreCase("setcolor"))
 		{
-			w = Integer.parseInt(args[0]);
-			h = Integer.parseInt(args[1]);
+			if(args.length < 3)
+			{
+				player.sendMessage("Especifique o R G B");
+				return true;
+			}
+			
+			int r, g, b;
+			
+			try
+			{
+				r = Integer.parseInt(args[0]);
+				g = Integer.parseInt(args[1]);
+				b = Integer.parseInt(args[2]);
+			}
+			catch (NumberFormatException e)
+			{
+				player.sendMessage("Inteiros apenas");
+				return true;
+			}
+			
+			Sheep s = (Sheep) loc.getWorld().spawnEntity(loc, EntityType.SHEEP);
+			s.setColor(DyeColor.getByColor(Color.fromRGB(r, g, b)));
 		}
-		catch(NumberFormatException e)
-		{
-			player.sendMessage("§cResolução deve ser em números inteiros...");
-			return true;
-		}
-		
-		Screen screen = new Screen(loc, w, h);
-		screen.createBounds();
-		System.out.println("Tudo ok");
 		
 		return false;
 	}

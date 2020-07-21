@@ -1,9 +1,10 @@
 name: 'MiniGames'
 version: 1.0.0
-api-version: 1.14
 description: 'Plugin teste'
 author: 'GiverPlay007'
 main: me.giverplay.minigames.Game
 commands:
   setup:
     description: 'Setup screen'
+  setcolor:
+    description: 'Colorable'

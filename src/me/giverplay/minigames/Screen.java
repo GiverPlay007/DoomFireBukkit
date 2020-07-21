@@ -28,6 +28,8 @@ public class Screen
 		this.z1 = start.getBlockZ();
 		this.bx = this.x1 - 1;
 		this.by = this.y1 - 1;
+		
+		createBounds();
 	}
 	
 	public void createBounds()
@@ -40,15 +42,11 @@ public class Screen
 			world.getBlockAt(xx, by + height + 1, z1).setType(Material.BEDROCK);
 		}
 		
-		System.out.println("X Finalizado");
-		
 		for(int yy = by; yy < y1 + height + 1; yy++)
 		{
 			world.getBlockAt(bx, yy, z1).setType(Material.BEDROCK);
-			world.getBlockAt(x1 + width + 1, yy, z1).setType(Material.BEDROCK);
+			world.getBlockAt(bx + width + 1, yy, z1).setType(Material.BEDROCK);
 		}
-		
-		System.out.println("Y finalizado");
 	}
 	
 	public void draw(BufferedImage image)

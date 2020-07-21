@@ -7,14 +7,19 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Game extends JavaPlugin
 {
-	String prefix = ChatColor.AQUA + "[MiniGames] ";
+	private static Game instance;
+	
+	private String prefix = ChatColor.AQUA + "[MiniGames] ";
 	
 	@Override
 	public void onEnable()
 	{
+		instance = this;
+		
 		sout(ChatColor.GREEN + "Habilitando plugin");
 		
 		getCommand("setup").setExecutor(new Commands());
+		getCommand("setcolor").setExecutor(new Commands());
 	}
 	
 	@Override
@@ -26,5 +31,10 @@ public class Game extends JavaPlugin
 	public void sout(String msg)
 	{
 		Bukkit.getConsoleSender().sendMessage(prefix + msg);
+	}
+	
+	public static Game getInstance()
+	{
+		return instance;
 	}
 }
