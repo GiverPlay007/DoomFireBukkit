@@ -1,6 +1,10 @@
 package me.giverplay.minigames;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -8,6 +12,7 @@ import org.bukkit.World;
 
 public class Screen
 {
+	private BufferedImage buffer;
 	private World world;
 	
 	private int width;
@@ -29,7 +34,23 @@ public class Screen
 		this.bx = this.x1 - 1;
 		this.by = this.y1 - 1;
 		
+		buffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		
 		createBounds();
+		
+		BufferedImage temp;
+		
+		try
+		{
+			temp = ImageIO.read(new File(Game.getInstance().getDataFolder(), "ezio.png"));
+		}
+		catch(IOException e)
+		{
+			System.out.println("ERRO");
+			return;
+		}
+		
+		draw(temp);
 	}
 	
 	public void createBounds()
@@ -51,6 +72,6 @@ public class Screen
 	
 	public void draw(BufferedImage image)
 	{
-		
+		buffer.getGraphics().drawImage(image, 0, 0, width, height, null);
 	}
 }

@@ -20,6 +20,8 @@ public class Game extends JavaPlugin
 		
 		getCommand("setup").setExecutor(new Commands());
 		getCommand("setcolor").setExecutor(new Commands());
+		
+		saveResource("ezio.png", false);
 	}
 	
 	@Override
