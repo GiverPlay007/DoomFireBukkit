@@ -21,6 +21,7 @@ public class Game extends JavaPlugin
 		getCommand("setup").setExecutor(new Commands());
 		
 		saveResource("ezio.png", false);
+		saveResource("New.png", false);
 	}
 	
 	@Override

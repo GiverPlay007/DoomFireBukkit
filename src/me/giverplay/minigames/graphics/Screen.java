@@ -44,7 +44,7 @@ public class Screen
 		
 		try
 		{
-			temp = ImageIO.read(new File(Game.getInstance().getDataFolder(), "ezio.png"));
+			temp = ImageIO.read(new File(Game.getInstance().getDataFolder(), "New.png"));
 		}
 		catch(IOException e)
 		{
@@ -53,6 +53,7 @@ public class Screen
 		}
 		
 		draw(temp);
+		render();
 	}
 	
 	public void createBounds()
