@@ -1,14 +1,10 @@
 package me.giverplay.minigames;
 
-import org.bukkit.Color;
-import org.bukkit.DyeColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Sheep;
 
 import me.giverplay.minigames.graphics.Screen;
 
@@ -48,32 +44,6 @@ public class Commands implements CommandExecutor
 			}
 			
 			Screen screen = new Screen(loc, w, h);
-		}
-		
-		if(cmd.getName().equalsIgnoreCase("setcolor"))
-		{
-			if(args.length < 3)
-			{
-				player.sendMessage("Especifique o R G B");
-				return true;
-			}
-			
-			int r, g, b;
-			
-			try
-			{
-				r = Integer.parseInt(args[0]);
-				g = Integer.parseInt(args[1]);
-				b = Integer.parseInt(args[2]);
-			}
-			catch (NumberFormatException e)
-			{
-				player.sendMessage("Inteiros apenas");
-				return true;
-			}
-			
-			Sheep s = (Sheep) loc.getWorld().spawnEntity(loc, EntityType.SHEEP);
-			s.setColor(DyeColor.getByColor(Color.fromRGB(r, g, b)));
 		}
 		
 		return false;

@@ -6,5 +6,3 @@ main: me.giverplay.minigames.Game
 commands:
   setup:
     description: 'Setup screen'
-  setcolor:
-    description: 'Colorable'

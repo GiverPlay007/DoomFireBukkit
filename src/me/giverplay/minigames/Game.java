@@ -19,7 +19,6 @@ public class Game extends JavaPlugin
 		sout(ChatColor.GREEN + "Habilitando plugin");
 		
 		getCommand("setup").setExecutor(new Commands());
-		getCommand("setcolor").setExecutor(new Commands());
 		
 		saveResource("ezio.png", false);
 	}

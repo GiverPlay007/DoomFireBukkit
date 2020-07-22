@@ -57,8 +57,6 @@ public class Screen
 	
 	public void createBounds()
 	{
-		System.out.println("Iniciando bounds");
-		
 		for(int xx = bx; xx < x1 + width + 1; xx++)
 		{
 			world.getBlockAt(xx, by, z1).setType(Material.BEDROCK);
@@ -75,5 +73,26 @@ public class Screen
 	public void draw(BufferedImage image)
 	{
 		buffer.getGraphics().drawImage(image, 0, 0, width, height, null);
+	}
+	
+	public void render()
+	{
+		for(int xx = 0; xx < width; xx++)
+		{
+			for(int yy = 0; yy < height; yy++)
+			{
+				int rgb = buffer.getRGB(xx, yy);
+				int r, g, b;
+				
+				r = (rgb >> 16) & 0xFF;
+				g = (rgb >> 8) & 0xFF;
+				b = rgb & 0xFF;
+				
+				Colors c = Colors.valueOf("C_" + r + "_" + g + "_" + b);
+				
+				world.getBlockAt(x1 + xx, y1 + height - yy, z1)
+					   .setType(c != null ? c.getMaterial() : Material.AIR);
+			}
+		}
 	}
 }
