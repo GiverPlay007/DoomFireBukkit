@@ -1,4 +1,4 @@
-package me.giverplay.minigames;
+package me.giverplay.minigames.graphics;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -9,6 +9,8 @@ import javax.imageio.ImageIO;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+
+import me.giverplay.minigames.Game;
 
 public class Screen
 {
