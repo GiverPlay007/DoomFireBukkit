@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 
 import me.giverplay.minigames.Game;
 
@@ -89,10 +90,29 @@ public class Screen
 				g = (rgb >> 8) & 0xFF;
 				b = rgb & 0xFF;
 				
-				Colors c = Colors.valueOf("C_" + r + "_" + g + "_" + b);
+				Colors c;
 				
-				world.getBlockAt(x1 + xx, y1 + height - yy, z1)
-					   .setType(c != null ? c.getMaterial() : Material.AIR);
+				try
+				{
+					c = Colors.valueOf("C_" + r + "_" + g + "_" + b);
+				}
+				catch(IllegalArgumentException e)
+				{
+					continue;
+				}
+				
+				Material mat = c.getMaterial();
+				Block block = world.getBlockAt(x1 + xx, y1 + height - yy, z1);
+				
+				if(mat.hasGravity())
+				{
+					Block block2 = world.getBlockAt(block.getX(), block.getY() -1, block.getZ());
+					
+					if(block2.getType() == Material.AIR)
+						block2.setType(Material.STONE);
+				}
+				
+				block.setType(mat);
 			}
 		}
 	}
