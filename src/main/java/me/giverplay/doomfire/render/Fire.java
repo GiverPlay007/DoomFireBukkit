@@ -5,10 +5,41 @@ import org.bukkit.Material;
 // Java implementation by https://github.com/AkiraGustavoMinami
 public class Fire
 {
-  // TODO: Colocar os blocos com as cores correspondentes a intensidade
+  // Limitezinhos
   private final Material[] colorArray = new Material[] {
-          Material.STONE,
-          Material.DIAMOND_ORE
+          Material.SNOW_BLOCK,
+          Material.WHITE_WOOL,
+          Material.SMOOTH_QUARTZ,
+          Material.WHITE_CONCRETE,
+          Material.IRON_BLOCK,
+          Material.YELLOW_WOOL,
+          Material.YELLOW_WOOL,
+          Material.YELLOW_CONCRETE,
+          Material.YELLOW_CONCRETE,
+          Material.YELLOW_CONCRETE,
+          Material.YELLOW_CONCRETE,
+          Material.ORANGE_CONCRETE_POWDER,
+          Material.ORANGE_CONCRETE_POWDER,
+          Material.ORANGE_CONCRETE_POWDER,
+          Material.ORANGE_CONCRETE_POWDER,
+          Material.ORANGE_CONCRETE,
+          Material.ORANGE_CONCRETE,
+          Material.ORANGE_CONCRETE,
+          Material.ORANGE_CONCRETE,
+          Material.RED_WOOL,
+          Material.RED_WOOL,
+          Material.RED_CONCRETE,
+          Material.RED_CONCRETE,
+          Material.NETHER_WART_BLOCK,
+          Material.NETHER_WART_BLOCK,
+          Material.BLACK_WOOL,
+          Material.BLACK_WOOL,
+          Material.BLACK_WOOL,
+          Material.BLACK_WOOL,
+          Material.BLACK_CONCRETE,
+          Material.BLACK_CONCRETE,
+          Material.BLACK_CONCRETE,
+          Material.BLACK_CONCRETE,
   };
 
   private int[] firePixelsArray;
