@@ -1,7 +1,3 @@
-# MiniGames
-Projeto de testes com manipulação de pixels no Minecraft
+## :fire: Doom Fire Bukkit
 
-## Informações
-Este projeto inclui o projeto PixelPrinter, do autor Zombie_Striker  
-Spigot: <https://www.spigotmc.org/resources/pixelprinter.29760/>  
-Bukkit: <https://dev.bukkit.org/projects/pixelprinter>  
+Vou colocar um descrição mais completa quando finalizar o projeto
