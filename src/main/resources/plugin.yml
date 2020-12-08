@@ -1,0 +1,7 @@
+name: DoomFire
+version: @version@
+main: me.giverplay.doomfire.DoomFire
+api-version: 1.16
+authors: [ GiverPlay ]
+description: Implement Doom Fire algorithm in Bukkit and Spigot API
+website: https://github.com/foca-enterprises
