@@ -5,47 +5,12 @@ import org.bukkit.Material;
 // Java implementation by https://github.com/AkiraGustavoMinami
 public class Fire
 {
-  // Limitezinhos
-  private final Material[] colorArray = new Material[] {
-          Material.SNOW_BLOCK,
-          Material.WHITE_WOOL,
-          Material.SMOOTH_QUARTZ,
-          Material.WHITE_CONCRETE,
-          Material.IRON_BLOCK,
-          Material.YELLOW_WOOL,
-          Material.YELLOW_WOOL,
-          Material.YELLOW_CONCRETE,
-          Material.YELLOW_CONCRETE,
-          Material.YELLOW_CONCRETE,
-          Material.YELLOW_CONCRETE,
-          Material.ORANGE_CONCRETE_POWDER,
-          Material.ORANGE_CONCRETE_POWDER,
-          Material.ORANGE_CONCRETE_POWDER,
-          Material.ORANGE_CONCRETE_POWDER,
-          Material.ORANGE_CONCRETE,
-          Material.ORANGE_CONCRETE,
-          Material.ORANGE_CONCRETE,
-          Material.ORANGE_CONCRETE,
-          Material.RED_WOOL,
-          Material.RED_WOOL,
-          Material.RED_CONCRETE,
-          Material.RED_CONCRETE,
-          Material.NETHER_WART_BLOCK,
-          Material.NETHER_WART_BLOCK,
-          Material.BLACK_WOOL,
-          Material.BLACK_WOOL,
-          Material.BLACK_WOOL,
-          Material.BLACK_WOOL,
-          Material.BLACK_CONCRETE,
-          Material.BLACK_CONCRETE,
-          Material.BLACK_CONCRETE,
-          Material.BLACK_CONCRETE,
-  };
+  private final Material[] colorArray;
 
   private int[] firePixelsArray;
 
-  protected int fireWidth = 1;
-  protected int fireHeight = 1;
+  protected int fireWidth = 0;
+  protected int fireHeight = 0;
 
   public void start(int width, int height)
   {
@@ -114,7 +79,26 @@ public class Fire
     {
       int overFlowPixelIndex = this.fireWidth * this.fireHeight;
       int pixelIndex = overFlowPixelIndex - this.fireWidth + column;
-      this.firePixelsArray[pixelIndex] = 36;
+      this.firePixelsArray[pixelIndex] = 13;
     }
+  }
+
+  {
+    colorArray = new Material[14];
+
+    colorArray[0] = Material.BLACK_CONCRETE;
+    colorArray[1] = Material.BLACK_WOOL;
+    colorArray[2] = Material.NETHER_WART_BLOCK;
+    colorArray[3] = Material.RED_CONCRETE;
+    colorArray[4] = Material.RED_WOOL;
+    colorArray[5] = Material.ORANGE_CONCRETE;
+    colorArray[6] = Material.ORANGE_CONCRETE_POWDER;
+    colorArray[7] = Material.YELLOW_CONCRETE;
+    colorArray[8] = Material.YELLOW_WOOL;
+    colorArray[9] = Material.IRON_BLOCK;
+    colorArray[10] = Material.WHITE_CONCRETE;
+    colorArray[11] = Material.SMOOTH_QUARTZ;
+    colorArray[12] = Material.WHITE_WOOL;
+    colorArray[13] = Material.SNOW_BLOCK;
   }
 }

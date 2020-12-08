@@ -63,7 +63,7 @@ public class Screen
     {
       for(int y = 0; y < fire.fireHeight; y++)
       {
-        Block block = world.getBlockAt(baseX + x, baseY - fire.fireHeight + y, baseZ);
+        Block block = world.getBlockAt(baseX + x, baseY + fire.fireHeight - y, baseZ);
         int index = x + y * fire.fireWidth;
 
         block.setType(pixels[index]);
