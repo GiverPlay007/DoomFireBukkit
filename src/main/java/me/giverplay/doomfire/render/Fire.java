@@ -79,26 +79,27 @@ public class Fire
     {
       int overFlowPixelIndex = this.fireWidth * this.fireHeight;
       int pixelIndex = overFlowPixelIndex - this.fireWidth + column;
-      this.firePixelsArray[pixelIndex] = 13;
+      this.firePixelsArray[pixelIndex] = colorArray.length -1;
     }
   }
 
   {
-    colorArray = new Material[14];
+    colorArray = new Material[15];
 
     colorArray[0] = Material.BLACK_CONCRETE;
     colorArray[1] = Material.BLACK_WOOL;
-    colorArray[2] = Material.NETHER_WART_BLOCK;
-    colorArray[3] = Material.RED_CONCRETE;
-    colorArray[4] = Material.RED_WOOL;
+    colorArray[2] = Material.GRAY_TERRACOTTA;
+    colorArray[3] = Material.RED_WOOL;
+    colorArray[4] = Material.RED_CONCRETE_POWDER;
     colorArray[5] = Material.ORANGE_CONCRETE;
-    colorArray[6] = Material.ORANGE_CONCRETE_POWDER;
-    colorArray[7] = Material.YELLOW_CONCRETE;
-    colorArray[8] = Material.YELLOW_WOOL;
-    colorArray[9] = Material.IRON_BLOCK;
-    colorArray[10] = Material.WHITE_CONCRETE;
-    colorArray[11] = Material.SMOOTH_QUARTZ;
-    colorArray[12] = Material.WHITE_WOOL;
-    colorArray[13] = Material.SNOW_BLOCK;
+    colorArray[6] = Material.ORANGE_WOOL;
+    colorArray[7] = Material.ORANGE_CONCRETE_POWDER;
+    colorArray[8] = Material.YELLOW_TERRACOTTA;
+    colorArray[9] = Material.YELLOW_CONCRETE;
+    colorArray[10] = Material.YELLOW_WOOL;
+    colorArray[11] = Material.YELLOW_CONCRETE_POWDER;
+    colorArray[12] = Material.SPONGE;
+    colorArray[13] = Material.SMOOTH_SANDSTONE;
+    colorArray[14] = Material.QUARTZ_BLOCK;
   }
 }
